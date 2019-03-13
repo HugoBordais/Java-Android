@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Mes-Prospects</string>
+    <string name="title">Prospects</string>
+    <string name="address_form">Your address</string>
+    <string name="password_form">Your password</string>
+    <string name="remind_checkbox">Remind me</string>
+    <string name="login_button">Sign in</string>
+    <string name="clean_button">Clean</string>
+    <string name="return_button">Return to connection</string>
+</resources>
