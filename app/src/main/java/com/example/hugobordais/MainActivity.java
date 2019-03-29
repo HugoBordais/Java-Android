@@ -12,12 +12,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 /* A faire :
-*           - Intérroger un serveur pour le JSON avec un Web Service
-*           - Parser le JSON
-*           - Afficher la liste avec un ListView
-* */
+    - Intérroger un serveur pour le JSON avec un Web Service
+    - Parser le JSON
+    - Afficher la liste avec un ListView*/
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBox_button_input;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,12 +53,17 @@ public class MainActivity extends AppCompatActivity {
         //attributions des variables aux ID
         address_input = findViewById(R.id.address_input);
         password_input = findViewById(R.id.password_input);
+        checkBox_button_input = findViewById(R.id.checkBox_input);
+
         clean_button = findViewById(R.id.clean_button);
         sign_in_button = findViewById(R.id.sign_in_button);
-        checkBox_button_input = findViewById(R.id.checkBox_input);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor = preferences.edit();
+
+        //Set à partir du moment où on clic
+        clean_button.setOnClickListener(clear_listener);
+        sign_in_button.setOnClickListener(login_listener);
 
         address_string = preferences.getString("address", "");
         password_string = preferences.getString("password", "");
@@ -72,11 +73,27 @@ public class MainActivity extends AppCompatActivity {
             password_input.setText(password_string);
             checkBox_button_input.setChecked(true);
         }
+    }
 
-        //Set à partir du moment où on clic
-        clean_button.setOnClickListener(clear_listener);
-        sign_in_button.setOnClickListener(login_listener);
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
+        Log.i("DESTROY", "méthode destroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.i("PAUSE", "méthode pause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.i("Resume", "méthode resume");
     }
 
 
