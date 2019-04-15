@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             address_string = address_input.getText().toString();
             password_string = password_input.getText().toString();
 
-
             if (address_string.equalsIgnoreCase("")) {
                 address_input.setError("Enter Address");
                 badtoast.show();

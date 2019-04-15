@@ -7,4 +7,6 @@
     <string name="login_button">Sign in</string>
     <string name="clean_button">Clean</string>
     <string name="return_button">Return to connection</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="call">Call me</string>
 </resources>
